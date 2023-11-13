@@ -1,3 +1,16 @@
+// Menunggu dokumen HTML selesai dimuat
+document.addEventListener("DOMContentLoaded", function() {
+    // Mendapatkan elemen dengan ID "animated-text"
+    var animatedText = document.getElementById("animated-text");
+  
+    // Menetapkan event listener untuk animasi yang berakhir
+    animatedText.addEventListener("animationiteration", function() {
+      // Mengatur teks kembali ke kondisi awal setiap kali animasi selesai
+      animatedText.style.width = "0";
+    });
+  });
+
+  
 $(function() {
 
     $('.navbar-toggle').click(function() {
@@ -84,6 +97,8 @@ $(function() {
                 //hack - forces mobile version to be off
                 return false;
             }
+
+    
     });
     
 });

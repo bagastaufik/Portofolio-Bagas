@@ -15,7 +15,7 @@
 
     <!-- Mobile Specific Metas
     ================================================== -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!-- Fonts -->
@@ -81,23 +81,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                  <h1 class="gerakkan-teks">Bagas Taufikqurrahman</h1>
+                  <h1 class="typing" id="animated-text"> Bagas Taufikqurrahman</h1>
                     <style>
-                      @keyframes gerakkanTeks {
-                          0% {
-                              transform: translateX(0);
-                          }
-                          50% {
-                              transform: translateX(100px);
-                          }
-                          100% {
-                              transform: translateX(0);
-                          }
+                    @keyframes typing {
+                      from {
+                        width: 0;
                       }
-                
-                      .gerakkan-teks {
-                          animation: gerakkanTeks 2s infinite; /* 2s adalah durasi animasi, infinite membuatnya berputar terus-menerus */
+                      to {
+                        width: 100%;
                       }
+                    }
+
+                    .typing {
+                      overflow: hidden;
+                      border-right: 2px solid #000;
+                      white-space: nowrap;
+                      margin: 0 auto;
+                      animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
+                    }
+
+                    @keyframes blink-caret {
+                      from,
+                      to {
+                        border-color: transparent;
+                      }
+                      50% {
+                        border-color: #000;
+                      }
+                    }
                   </style>
                    
                     <div class="page-scroll">
@@ -125,30 +136,7 @@
                     <div class="col-md-6 col-md-offset-3">
                         <h2>Tentang Saya</h2>
                         <br>
-                        <style>
-                        .about-content {
-                          display: flex; /* Membuat konten menjadi tampil dalam satu baris */
-                          align-items: center; /* Membuat konten vertikal terpusat */
-                        }
-
-                        .img-left {
-                          max-width: 60%; /* Mengatur lebar maksimum gambar */
-                          margin-right: 20px; /* Memberi jarak antara gambar dan teks */
-                          border-radius: 35%;
-                        }
-                        /* Gaya bingkai gambar */
-                        .img-left {
-                            border: 5px solid #413131; /* Warna dan lebar bingkai dapat disesuaikan */
-                            border-radius: 10px; /* Menambahkan sudut melengkung pada bingkai (opsional) */
-                            transition: border 0.3s ease; /* Efek transisi saat berubah, opsional */
-                        }
-
-                        /* Gaya tambahan untuk memperlihatkan efek saat mengarahkan kursor ke gambar */
-                        .img-left:hover {
-                            border: 5px solid #ff4500; /* Mengganti warna bingkai saat mengarahkan kursor */
-                        }
-                        </style>
-                        <img src="assets/img/bagas3.jpg" class="img-left" alt=""> 
+                        <img src="assets/img/bagas3.jpg" class="img-lines" alt="" style="width: 50%; max-width: 280px; border-radius: 40%;"> 
                         <p>Halo perkenalkan nama saya Bagas Taufikqurrahman, biasa di sapa dengan nama panggilan bagas. 
                           Saya adalah seseorang yang pernah bekerja sebagai frontliner dan pelayan restoran, yang telah mengasah kemampuan komunikasi dan keramahan saya. 
                           Saat ini saya berusia 21 tahun dan tinggal di kota tangerang. Saya juga memiliki keminatan pada dunia pemrograman, dengan kemampuan dalam HTML, CSS, dan JavaScript, yang memungkinkan saya untuk menciptakan situs web yang interaktif dan menarik.</p>
@@ -220,6 +208,7 @@
                             </div><!-- /.portfolio-item-info -->
                         </div><!-- /.portfolio-item -->
                     </div>
+
                     <div class="col-md-4 col-xs-6">
                         <div class="portfolio-item">
                             <img src="assets/img/projek2 .png" width="360" height="270" alt="">
@@ -230,11 +219,12 @@
                             </div><!-- /.portfolio-item-info -->
                         </div><!-- /.portfolio-item -->
                     </div>
+
                     <div class="col-md-4 col-xs-6">
                         <div class="portfolio-item">
-                            <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
+                            <img src="assets/img/projek3.png" class="img-res" alt="">
                             <div class="portfolio-item-info">
-                                <h4>Project Title</h4>
+                                <h4>Aplikasi Laundry</h4>
                                 <a href="#" data-toggle="modal" data-target="#portfolioItem3"><span class="glyphicon glyphicon-eye-open"></span></a>
                                 <a href="#"><span class="glyphicon glyphicon-link"></span></a>
                             </div><!-- /.portfolio-item-info -->
@@ -257,45 +247,55 @@
 
         <section id="contact" class="site-section section-form text-center">
             <div class="container">
-                <h3>Contact</h3>
+                <h3>Contact Me</h3>
+                
                 <img src="assets/img/bagas.jpg" class="img-lines" alt="" style="width: 50%; max-width: 300px; border-radius: 40%;">
+                <br> 
                 <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>   
-                        </div>
-                        <div class="col-sm-12">
-                            <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+
+                      <p><strong>Pilih dan klik akun sosial media saya di bawah ini :</strong></p>
+                      <a href="https://instagram.com/bagastaufik_?igshid=cW93Zm40d2Rzb3Vh" target="_blank">
+                        <img src="./assets/img/instagram.png" alt="Instagram" style="width: 50px; height: 50px; margin-right: 10px;">
+                      </a>
+                      <a href="https://www.facebook.com/bagas.naxsragen?mibextid=ZbWKwL" target="_blank">
+                        <img src="./assets/img/facebook.png" alt="Facebook" style="width: 50px; height: 50px; margin-right: 10px;">
+                      </a>
+                      <a href="https://wa.me/089662947209" target="_blank">
+                        <img src="./assets/img/whatsapp.png" alt="WhatsApp" style="width: 50px; height: 50px; margin-right: 10px;">
+                      </a>
                     </div>
-                    <button href="#" class="btn btn-border" type="submit">Hire Me <span class="glyphicon glyphicon-send"></span></button>
+                  </div>
+                  
                 </form>
             </div>
         </section><!-- /.section-form -->
 
     </main><!-- /#main -->
-
-    <footer id="colophon" class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <a class="icon facebook-bg" href="#"><i class="icon-facebook"></i></a>
-                    <a class="icon twitter-bg" href="#"><i class="icon-twitter"></i></a>
-                    <a class="icon gplus-bg" href="#"><i class="icon-linkedin"></i></a>
-                    <a class="icon linkedin-bg" href="#"><i class="icon-gplus"></i></a>
-                </div>
-                <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3"><p class="copyright">2017. All Rights Reserved</p></div>
-                <div class="col-sm-4 col-xs-3">
-                    <div class="text-right page-scroll">
-                        <a class="icon icon-up-bg" href="#hero"><i class="icon-up"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer><!-- /#footer -->
+    <style>
+      /* Styling for the card */
+      footer {
+        background-color: #131313;
+        padding: 20px;
+        border-top: 1px solid #dee2e6;
+        margin-top: 20px;
+      }
+  
+      .card {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(238, 235, 235, 0.1);
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <footer>
+      <div class="card">
+        <p>&copy; 2023 Bagas Taufikqurrahman. Hak Cipta Dilindungi Undang-Undang.</p>
+      </div>
+    </footer>
 
     <!-- Modals -->
     <div id="portfolioItem1" class="modal fade" role="dialog">
@@ -349,11 +349,13 @@
         <div class="modal-content">
           <div class="modal-header">
             <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <img class="img-res" src="assets/img/portfolio-3.jpg" alt="">
+            <img class="img-res" src="assets/img/projek3-1.png" alt="">
           </div>
           <div class="modal-body">
-            <h4 class="modal-title">Project title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
+            <h4 class="modal-title">Aplikasi Laundry</h4>
+            <p>Aplikasi website laundry memiliki beberapa fungsi yang bertujuan untuk memudahkan pengelolaan 
+              dan pemesanan jasa laundry. Dengan berbagai fitur ini, aplikasi website laundry bertujuan untuk 
+              meningkatkan kenyamanan dan efisiensi dalam proses pemesanan, pengelolaan, dan pelacakan layanan laundry. </p>
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-fill">Visit Page</a>
@@ -362,59 +364,8 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="portfolioItem4" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <img class="img-res" src="assets/img/portfolio-4.jpg" alt="">
-          </div>
-          <div class="modal-body">
-            <h4 class="modal-title">Project title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-fill">Visit Page</a>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="portfolioItem5" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <img class="img-res" src="assets/img/portfolio-5.jpg" alt="">
-          </div>
-          <div class="modal-body">
-            <h4 class="modal-title">Project title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-fill">Visit Page</a>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="portfolioItem6" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <img class="img-res" src="assets/img/portfolio-6.jpg" alt="">
-          </div>
-          <div class="modal-body">
-            <h4 class="modal-title">Project title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#" class="btn btn-fill">Visit Page</a>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    
+          
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -426,6 +377,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
-  
+    
 </body>
 </html>

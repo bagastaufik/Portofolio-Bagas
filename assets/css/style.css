@@ -151,6 +151,7 @@ html, body {
     object-fit: cover;
 }
 
+
 .visible-xxs {
     display: none;
 }
@@ -241,7 +242,7 @@ html, body {
 }
 
 .hero h1 {
-    font-size: 46px;
+    font-size: 35px;
     font-weight: 700;
     margin: 0 0 15px;
     text-transform: uppercase;
@@ -284,6 +285,7 @@ html, body {
 .site-section p {
     margin-bottom: 35px;
 }
+
 
 /* Section: Skills */
 .section-skills {
