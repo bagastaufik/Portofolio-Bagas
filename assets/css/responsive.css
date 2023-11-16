@@ -334,8 +334,15 @@
 	}
 
 	.img-lines {
-	    margin: 10px 0 30px;
+	    margin: 5px 0 40px;
 	}
+
+	.img-lines {
+		width: 300px; /* Sesuaikan dengan nilai yang diinginkan, bisa berupa piksel atau persentase */
+		height: auto; /* Untuk menjaga aspek ratio gambar tetap proporsional */
+		max-width: 100%; /* Untuk memastikan gambar tidak melebihi lebar kontainer induknya */
+	  }
+	  
 
 	.site-section p {
 	    margin-bottom: 25px;
